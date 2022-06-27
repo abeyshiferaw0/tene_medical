@@ -37,10 +37,10 @@ class HomeView extends GetView<HomeController> {
                     fontWeight: FontWeight.w400,
                   ),
                   alignLabelWithHint: true,
-                  prefix: Icon(
+                  prefixIcon: Icon(
                     Icons.search,
-                    size: 2.w,
-                    color: Colors.black,
+                    size: 5.w,
+                    color: Colors.black45,
                   ),
                   fillColor: Colors.white,
                   border: InputBorder.none,
@@ -98,6 +98,13 @@ class HomeView extends GetView<HomeController> {
             child: Material(
               color: Colors.black12,
               borderRadius: BorderRadius.circular(12),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: Image.asset(
+                  "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b530f7110494491.5feef8228f2b8.png",
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
           ),
           Container(
