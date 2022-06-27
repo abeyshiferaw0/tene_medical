@@ -9,6 +9,10 @@ abstract class Routes {
   static const OTPPAGE = _Paths.OTPPAGE;
   static const FORGET_PASSWORD = _Paths.FORGET_PASSWORD;
   static const FORGET_PASSWORD_TWO = _Paths.FORGET_PASSWORD_TWO;
+  static const MAIN_SCREEN = _Paths.MAIN_SCREEN;
+  static const NEAR_BY = _Paths.NEAR_BY;
+  static const ORDER = _Paths.ORDER;
+  static const PROFILE = _Paths.PROFILE;
 }
 
 abstract class _Paths {
@@ -19,4 +23,8 @@ abstract class _Paths {
   static const OTPPAGE = '/otppage';
   static const FORGET_PASSWORD = '/forget-password';
   static const FORGET_PASSWORD_TWO = '/forget-password-two';
+  static const MAIN_SCREEN = '/main-screen';
+  static const NEAR_BY = '/near-by';
+  static const ORDER = '/order';
+  static const PROFILE = '/profile';
 }

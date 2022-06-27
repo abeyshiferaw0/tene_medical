@@ -3,15 +3,13 @@ import 'package:get/get.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:sizer/sizer.dart';
 import 'package:tene_medical/app/routes/app_pages.dart';
-
+import 'package:tene_medical/app/config/theme.dart';
 import '../controllers/otppage_controller.dart';
 
 class OtpPageView extends GetView<OtppageController> {
   OtpPageView({Key? key}) : super(key: key);
 
-  ///
-  final themeColor = const Color(0xff129797);
-  final themeColorFaded = const Color(0xff4BB7B1);
+
   final TextEditingController textEditingController = TextEditingController();
 
   @override
@@ -64,6 +62,7 @@ class OtpPageView extends GetView<OtppageController> {
 
   buildAppBar() {
     return AppBar(
+      elevation: 0,
       toolbarHeight: 11.h,
       leading: IconButton(
         onPressed: () {
@@ -104,8 +103,8 @@ class OtpPageView extends GetView<OtppageController> {
       width: double.infinity,
       child: Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [themeColor, themeColorFaded],
+          gradient: const LinearGradient(
+            colors: [AppTheme.themeColor, AppTheme.themeColorFaded],
           ),
           borderRadius: BorderRadius.circular(8.0),
         ),
@@ -162,15 +161,15 @@ class OtpPageView extends GetView<OtppageController> {
         fieldHeight: 16.w,
         fieldWidth: 16.w,
         activeFillColor: Colors.white,
-        activeColor: themeColorFaded.withOpacity(0.5),
+        activeColor: AppTheme.themeColorFaded.withOpacity(0.5),
         fieldOuterPadding: EdgeInsets.zero,
-        disabledColor: themeColorFaded.withOpacity(0.5),
-        inactiveColor: themeColorFaded.withOpacity(0.5),
-        selectedColor: themeColorFaded.withOpacity(0.5),
+        disabledColor: AppTheme.themeColorFaded.withOpacity(0.5),
+        inactiveColor: AppTheme.themeColorFaded.withOpacity(0.5),
+        selectedColor: AppTheme.themeColorFaded.withOpacity(0.5),
         selectedFillColor: Colors.white,
         inactiveFillColor: Colors.white,
       ),
-      cursorColor: themeColor,
+      cursorColor: AppTheme.themeColor,
       animationDuration: const Duration(milliseconds: 300),
       enableActiveFill: true,
       controller: textEditingController,

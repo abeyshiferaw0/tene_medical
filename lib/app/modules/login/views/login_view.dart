@@ -2,14 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 import 'package:tene_medical/app/routes/app_pages.dart';
-
+import 'package:tene_medical/app/config/theme.dart';
 import '../controllers/login_controller.dart';
 
 class LoginView extends GetView<LoginController> {
   const LoginView({Key? key}) : super(key: key);
-
-  final themeColor = const Color(0xff129797);
-  final themeColorFaded = const Color(0xff4BB7B1);
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +75,7 @@ class LoginView extends GetView<LoginController> {
     return Text(
       "Hello Again!\nWelcome\nBack",
       style: TextStyle(
-        color: themeColor,
+        color: AppTheme.themeColor,
         fontSize: 28.sp,
         letterSpacing: 1.5,
         height: 0.18.h,
@@ -120,15 +117,15 @@ class LoginView extends GetView<LoginController> {
                   Radius.circular(6.0),
                 ),
                 borderSide: BorderSide(
-                  color: themeColor.withOpacity(0.4),
+                  color: AppTheme.themeColor.withOpacity(0.4),
                 ),
               ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: const BorderRadius.all(
+              focusedBorder: const OutlineInputBorder(
+                borderRadius: BorderRadius.all(
                   Radius.circular(6.0),
                 ),
                 borderSide: BorderSide(
-                  color: themeColor,
+                  color: AppTheme.themeColor,
                 ),
               ),
               filled: true,
@@ -181,15 +178,15 @@ class LoginView extends GetView<LoginController> {
                     Radius.circular(6.0),
                   ),
                   borderSide: BorderSide(
-                    color: themeColor.withOpacity(0.4),
+                    color: AppTheme.themeColor.withOpacity(0.4),
                   ),
                 ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: const BorderRadius.all(
+                focusedBorder: const OutlineInputBorder(
+                  borderRadius: BorderRadius.all(
                     Radius.circular(6.0),
                   ),
                   borderSide: BorderSide(
-                    color: themeColor,
+                    color: AppTheme.themeColor,
                   ),
                 ),
                 filled: true,
@@ -211,13 +208,13 @@ class LoginView extends GetView<LoginController> {
       children: [
         Theme(
           data: Theme.of(context).copyWith(
-            unselectedWidgetColor: themeColor,
+            unselectedWidgetColor: AppTheme.themeColor,
           ),
           child: Obx(
             () {
               return Checkbox(
                 value: controller.rememberMeChecked.value,
-                activeColor: themeColor,
+                activeColor: AppTheme.themeColor,
                 checkColor: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(3),
@@ -244,7 +241,7 @@ class LoginView extends GetView<LoginController> {
           child: Text(
             "Forget Password?",
             style: TextStyle(
-              color: themeColorFaded,
+              color: AppTheme.themeColorFaded,
               fontSize: 12.sp,
               fontWeight: FontWeight.w500,
             ),
@@ -262,8 +259,8 @@ class LoginView extends GetView<LoginController> {
           width: double.infinity,
           child: Container(
             decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [themeColor, themeColorFaded],
+              gradient: const LinearGradient(
+                colors: [AppTheme.themeColor, AppTheme.themeColorFaded],
               ),
               borderRadius: BorderRadius.circular(8.0),
             ),
@@ -303,7 +300,7 @@ class LoginView extends GetView<LoginController> {
               child: Text(
                 "Create an Account",
                 style: TextStyle(
-                  color: themeColor,
+                  color: AppTheme.themeColor,
                   fontSize: 10.sp,
                   fontWeight: FontWeight.w500,
                 ),
@@ -341,11 +338,11 @@ class LoginView extends GetView<LoginController> {
               fontSize: 11.sp,
               fontWeight: FontWeight.w400,
             ),
-            children: <InlineSpan>[
+            children: const <InlineSpan>[
               TextSpan(
                 text: 'Guest',
                 style: TextStyle(
-                  color: themeColor,
+                  color: AppTheme.themeColor,
                 ),
               ),
             ],
@@ -357,6 +354,7 @@ class LoginView extends GetView<LoginController> {
 
   buildAppBar() {
     return AppBar(
+      elevation: 0,
       toolbarHeight: 11.h,
       title: Row(
         children: [

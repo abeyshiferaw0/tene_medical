@@ -2,15 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 import 'package:tene_medical/app/routes/app_pages.dart';
-
+import 'package:tene_medical/app/config/theme.dart';
 import '../controllers/forget_password_controller.dart';
 
 class ForgetPasswordView extends GetView<ForgetPasswordController> {
   const ForgetPasswordView({Key? key}) : super(key: key);
 
-  ///
-  final themeColor = const Color(0xff129797);
-  final themeColorFaded = const Color(0xff4BB7B1);
+
 
   @override
   Widget build(BuildContext context) {
@@ -63,6 +61,7 @@ class ForgetPasswordView extends GetView<ForgetPasswordController> {
 
   buildAppBar() {
     return AppBar(
+      elevation: 0,
       toolbarHeight: 11.h,
       leading: IconButton(
         onPressed: () {
@@ -103,8 +102,8 @@ class ForgetPasswordView extends GetView<ForgetPasswordController> {
       width: double.infinity,
       child: Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [themeColor, themeColorFaded],
+          gradient: const LinearGradient(
+            colors: [AppTheme.themeColor, AppTheme.themeColorFaded],
           ),
           borderRadius: BorderRadius.circular(8.0),
         ),
@@ -189,15 +188,15 @@ class ForgetPasswordView extends GetView<ForgetPasswordController> {
               Radius.circular(6.0),
             ),
             borderSide: BorderSide(
-              color: themeColor.withOpacity(0.4),
+              color: AppTheme.themeColor.withOpacity(0.4),
             ),
           ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: const BorderRadius.all(
+          focusedBorder: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(
               Radius.circular(6.0),
             ),
             borderSide: BorderSide(
-              color: themeColor,
+              color: AppTheme.themeColor,
             ),
           ),
           filled: true,

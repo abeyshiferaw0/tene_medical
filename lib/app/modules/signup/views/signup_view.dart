@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 import 'package:tene_medical/app/routes/app_pages.dart';
-
+import 'package:tene_medical/app/config/theme.dart';
 import '../controllers/signup_controller.dart';
 
 class SignupView extends GetView<SignupController> {
-  final themeColor = const Color(0xff129797);
-  final themeColorFaded = const Color(0xff4BB7B1);
+  const SignupView({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +71,7 @@ class SignupView extends GetView<SignupController> {
     return Text(
       "Hello!\nSign up to\nGet Started",
       style: TextStyle(
-        color: themeColor,
+        color: AppTheme.themeColor,
         fontSize: 28.sp,
         letterSpacing: 1.5,
         height: 0.18.h,
@@ -112,15 +112,15 @@ class SignupView extends GetView<SignupController> {
                         Radius.circular(6.0),
                       ),
                       borderSide: BorderSide(
-                        color: themeColor.withOpacity(0.4),
+                        color: AppTheme.themeColor.withOpacity(0.4),
                       ),
                     ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: const BorderRadius.all(
+                    focusedBorder: const OutlineInputBorder(
+                      borderRadius: BorderRadius.all(
                         Radius.circular(6.0),
                       ),
                       borderSide: BorderSide(
-                        color: themeColor,
+                        color: AppTheme.themeColor,
                       ),
                     ),
                     filled: true,
@@ -162,15 +162,15 @@ class SignupView extends GetView<SignupController> {
                         Radius.circular(6.0),
                       ),
                       borderSide: BorderSide(
-                        color: themeColor.withOpacity(0.4),
+                        color: AppTheme.themeColor.withOpacity(0.4),
                       ),
                     ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: const BorderRadius.all(
+                    focusedBorder: const OutlineInputBorder(
+                      borderRadius: BorderRadius.all(
                         Radius.circular(6.0),
                       ),
                       borderSide: BorderSide(
-                        color: themeColor,
+                        color: AppTheme.themeColor,
                       ),
                     ),
                     filled: true,
@@ -217,15 +217,15 @@ class SignupView extends GetView<SignupController> {
                   Radius.circular(6.0),
                 ),
                 borderSide: BorderSide(
-                  color: themeColor.withOpacity(0.4),
+                  color: AppTheme.themeColor.withOpacity(0.4),
                 ),
               ),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: const BorderRadius.all(
+              focusedBorder: const OutlineInputBorder(
+                borderRadius: BorderRadius.all(
                   Radius.circular(6.0),
                 ),
                 borderSide: BorderSide(
-                  color: themeColor,
+                  color: AppTheme.themeColor,
                 ),
               ),
               filled: true,
@@ -278,15 +278,15 @@ class SignupView extends GetView<SignupController> {
                     Radius.circular(6.0),
                   ),
                   borderSide: BorderSide(
-                    color: themeColor.withOpacity(0.4),
+                    color: AppTheme.themeColor.withOpacity(0.4),
                   ),
                 ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: const BorderRadius.all(
+                focusedBorder: const OutlineInputBorder(
+                  borderRadius: BorderRadius.all(
                     Radius.circular(6.0),
                   ),
                   borderSide: BorderSide(
-                    color: themeColor,
+                    color: AppTheme.themeColor,
                   ),
                 ),
                 filled: true,
@@ -340,15 +340,15 @@ class SignupView extends GetView<SignupController> {
                     Radius.circular(6.0),
                   ),
                   borderSide: BorderSide(
-                    color: themeColor.withOpacity(0.4),
+                    color: AppTheme.themeColor.withOpacity(0.4),
                   ),
                 ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: const BorderRadius.all(
+                focusedBorder: const OutlineInputBorder(
+                  borderRadius: BorderRadius.all(
                     Radius.circular(6.0),
                   ),
                   borderSide: BorderSide(
-                    color: themeColor,
+                    color: AppTheme.themeColor,
                   ),
                 ),
                 filled: true,
@@ -389,11 +389,11 @@ class SignupView extends GetView<SignupController> {
               fontSize: 11.sp,
               fontWeight: FontWeight.w400,
             ),
-            children: <InlineSpan>[
+            children: const <InlineSpan>[
               TextSpan(
                 text: 'Guest',
                 style: TextStyle(
-                  color: themeColor,
+                  color: AppTheme.themeColor,
                 ),
               ),
             ],
@@ -405,6 +405,7 @@ class SignupView extends GetView<SignupController> {
 
   buildAppBar() {
     return AppBar(
+      elevation: 0,
       toolbarHeight: 11.h,
       leading: IconButton(
         onPressed: () {
@@ -447,8 +448,8 @@ class SignupView extends GetView<SignupController> {
           width: double.infinity,
           child: Container(
             decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [themeColor, themeColorFaded],
+              gradient: const LinearGradient(
+                colors: [AppTheme.themeColor, AppTheme.themeColorFaded],
               ),
               borderRadius: BorderRadius.circular(8.0),
             ),
@@ -486,7 +487,7 @@ class SignupView extends GetView<SignupController> {
               child: Text(
                 "Sign In",
                 style: TextStyle(
-                  color: themeColor,
+                  color: AppTheme.themeColor,
                   fontSize: 10.sp,
                   fontWeight: FontWeight.w500,
                 ),

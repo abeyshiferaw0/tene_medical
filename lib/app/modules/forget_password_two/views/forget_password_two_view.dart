@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
+import 'package:tene_medical/app/routes/app_pages.dart';
 
+import 'package:tene_medical/app/config/theme.dart';
 import '../controllers/forget_password_two_controller.dart';
 
 class ForgetPasswordTwoView extends GetView<ForgetPasswordTwoController> {
   const ForgetPasswordTwoView({Key? key}) : super(key: key);
 
-  ///
-  final themeColor = const Color(0xff129797);
-  final themeColorFaded = const Color(0xff4BB7B1);
+
 
   @override
   Widget build(BuildContext context) {
@@ -62,6 +62,7 @@ class ForgetPasswordTwoView extends GetView<ForgetPasswordTwoController> {
 
   buildAppBar() {
     return AppBar(
+      elevation: 0,
       toolbarHeight: 11.h,
       leading: IconButton(
         onPressed: () {
@@ -103,12 +104,14 @@ class ForgetPasswordTwoView extends GetView<ForgetPasswordTwoController> {
       child: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [themeColor, themeColorFaded],
+            colors: [AppTheme.themeColor, AppTheme.themeColorFaded],
           ),
           borderRadius: BorderRadius.circular(8.0),
         ),
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            Get.toNamed(Routes.MAIN_SCREEN);
+          },
           style: ElevatedButton.styleFrom(
             primary: Colors.transparent,
             shadowColor: Colors.transparent,
@@ -197,7 +200,7 @@ class ForgetPasswordTwoView extends GetView<ForgetPasswordTwoController> {
                     Radius.circular(6.0),
                   ),
                   borderSide: BorderSide(
-                    color: themeColor.withOpacity(0.4),
+                    color: AppTheme.themeColor.withOpacity(0.4),
                   ),
                 ),
                 focusedBorder: OutlineInputBorder(
@@ -205,7 +208,7 @@ class ForgetPasswordTwoView extends GetView<ForgetPasswordTwoController> {
                     Radius.circular(6.0),
                   ),
                   borderSide: BorderSide(
-                    color: themeColor,
+                    color: AppTheme.themeColor,
                   ),
                 ),
                 filled: true,
@@ -257,7 +260,7 @@ class ForgetPasswordTwoView extends GetView<ForgetPasswordTwoController> {
                     Radius.circular(6.0),
                   ),
                   borderSide: BorderSide(
-                    color: themeColor.withOpacity(0.4),
+                    color: AppTheme.themeColor.withOpacity(0.4),
                   ),
                 ),
                 focusedBorder: OutlineInputBorder(
@@ -265,7 +268,7 @@ class ForgetPasswordTwoView extends GetView<ForgetPasswordTwoController> {
                     Radius.circular(6.0),
                   ),
                   borderSide: BorderSide(
-                    color: themeColor,
+                    color: AppTheme.themeColor,
                   ),
                 ),
                 filled: true,

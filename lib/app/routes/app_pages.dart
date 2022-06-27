@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-
+import 'package:tene_medical/app/config/theme.dart';
 import '../modules/forget_password/bindings/forget_password_binding.dart';
 import '../modules/forget_password/views/forget_password_view.dart';
 import '../modules/forget_password_two/bindings/forget_password_two_binding.dart';
@@ -8,8 +8,16 @@ import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
+import '../modules/main_screen/bindings/main_screen_binding.dart';
+import '../modules/main_screen/views/main_screen_view.dart';
+import '../modules/near_by/bindings/near_by_binding.dart';
+import '../modules/near_by/views/near_by_view.dart';
+import '../modules/order/bindings/order_binding.dart';
+import '../modules/order/views/order_view.dart';
 import '../modules/otppage/bindings/otppage_binding.dart';
 import '../modules/otppage/views/otppage_view.dart';
+import '../modules/profile/bindings/profile_binding.dart';
+import '../modules/profile/views/profile_view.dart';
 import '../modules/signup/bindings/signup_binding.dart';
 import '../modules/signup/views/signup_view.dart';
 
@@ -28,7 +36,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.LOGIN,
-      page: () => LoginView(),
+      page: () => const LoginView(),
       binding: LoginBinding(),
     ),
     GetPage(
@@ -43,13 +51,33 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.FORGET_PASSWORD,
-      page: () => ForgetPasswordView(),
+      page: () => const ForgetPasswordView(),
       binding: ForgetPasswordBinding(),
     ),
     GetPage(
       name: _Paths.FORGET_PASSWORD_TWO,
-      page: () => ForgetPasswordTwoView(),
+      page: () => const ForgetPasswordTwoView(),
       binding: ForgetPasswordTwoBinding(),
+    ),
+    GetPage(
+      name: _Paths.MAIN_SCREEN,
+      page: () => MainScreenView(),
+      binding: MainScreenBinding(),
+    ),
+    GetPage(
+      name: _Paths.NEAR_BY,
+      page: () => NearByView(),
+      binding: NearByBinding(),
+    ),
+    GetPage(
+      name: _Paths.ORDER,
+      page: () => OrderView(),
+      binding: OrderBinding(),
+    ),
+    GetPage(
+      name: _Paths.PROFILE,
+      page: () => ProfileView(),
+      binding: ProfileBinding(),
     ),
   ];
 }
