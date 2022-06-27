@@ -100,7 +100,7 @@ class HomeView extends GetView<HomeController> {
               borderRadius: BorderRadius.circular(12),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(12),
-                child: Image.asset(
+                child: Image.network(
                   "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/b530f7110494491.5feef8228f2b8.png",
                   fit: BoxFit.cover,
                 ),
