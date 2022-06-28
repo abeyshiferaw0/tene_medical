@@ -250,9 +250,8 @@ class HomeView extends GetView<HomeController> {
   Container buildNewArrivalProducts() {
     return Container(
       color: const Color(0xff04312B),
-      height: 47.h,
       padding: EdgeInsets.only(
-        top: 3.w,
+        top: 4.w,
         bottom: 4.w,
       ),
       child: Column(
@@ -291,13 +290,36 @@ class HomeView extends GetView<HomeController> {
               ),
             ],
           ),
-          Expanded(
-            child: ListView.builder(
-              itemCount: controller.featuredProductsList.length,
-              scrollDirection: Axis.horizontal,
-              shrinkWrap: true,
-              itemBuilder: (context, index) {
-                return Container(
+          // Expanded(
+          //   child: ListView.builder(
+          //     itemCount: controller.featuredProductsList.length,
+          //     scrollDirection: Axis.horizontal,
+          //     shrinkWrap: true,
+          //     itemBuilder: (context, index) {
+          //       return Container(
+          //         width: 42.w,
+          //         margin: EdgeInsets.only(
+          //           left: index == 0 ? 3.w : 0,
+          //         ),
+          //         child: FeaturedProductItem(
+          //           featuredProduct: controller.featuredProductsList.elementAt(
+          //             index,
+          //           ),
+          //           useDarkBackground: true,
+          //           isForGridView: false,
+          //           onTap: () {},
+          //           onAddTap: () {},
+          //         ),
+          //       );
+          //     },
+          //   ),
+          // ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: List.generate(
+                controller.featuredProductsList.length,
+                (index) => Container(
                   width: 42.w,
                   margin: EdgeInsets.only(
                     left: index == 0 ? 3.w : 0,
@@ -306,13 +328,13 @@ class HomeView extends GetView<HomeController> {
                     featuredProduct: controller.featuredProductsList.elementAt(
                       index,
                     ),
-                    useDarkBackground: true,
+                    useDarkBackground: false,
                     isForGridView: false,
                     onTap: () {},
                     onAddTap: () {},
                   ),
-                );
-              },
+                ),
+              ),
             ),
           ),
         ],
