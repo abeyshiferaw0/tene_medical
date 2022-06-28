@@ -370,22 +370,33 @@ class HomeView extends GetView<HomeController> {
   Container buildMainCategories() {
     return Container(
       color: Colors.white,
-      height: 21.h,
       padding: EdgeInsets.only(
-        top: 3.w,
-        bottom: 3.w,
+        top: 6.w,
+        bottom: 6.w,
         right: 4.w,
       ),
-      child: ListView.builder(
+      child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
-        itemCount: controller.mainCategories.length,
-        itemBuilder: (context, index) {
-          return MainCategoryItem(
-            mainCategory: controller.mainCategories.elementAt(index),
-            onTap: () {},
-          );
-        },
+        child: Row(
+          children: List.generate(
+            controller.mainCategories.length,
+            (index) => MainCategoryItem(
+              mainCategory: controller.mainCategories.elementAt(index),
+              onTap: () {},
+            ),
+          ),
+        ),
       ),
+      // child: ListView.builder(
+      //   scrollDirection: Axis.horizontal,
+      //   itemCount: controller.mainCategories.length,
+      //   itemBuilder: (context, index) {
+      //     return MainCategoryItem(
+      //       mainCategory: controller.mainCategories.elementAt(index),
+      //       onTap: () {},
+      //     );
+      //   },
+      // ),
     );
   }
 
