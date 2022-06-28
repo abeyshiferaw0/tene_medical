@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
-import 'package:tene_medical/app/routes/app_pages.dart';
 import 'package:tene_medical/app/config/theme.dart';
+import 'package:tene_medical/app/routes/app_pages.dart';
+
 import '../controllers/login_controller.dart';
 
 class LoginView extends GetView<LoginController> {
@@ -25,44 +26,46 @@ class LoginView extends GetView<LoginController> {
             ///OTHER WIDGETS
             Padding(
               padding: EdgeInsets.all(2.h),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  ///HEADER TEXT
-                  buildHeader(),
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    ///HEADER TEXT
+                    buildHeader(),
 
-                  SizedBox(
-                    height: 5.5.h,
-                  ),
+                    SizedBox(
+                      height: 5.5.h,
+                    ),
 
-                  ///EMAIL/PHONE/PASSWORD INPUTS
-                  buildInputFields(),
+                    ///EMAIL/PHONE/PASSWORD INPUTS
+                    buildInputFields(),
 
-                  SizedBox(
-                    height: 1.h,
-                  ),
+                    SizedBox(
+                      height: 1.h,
+                    ),
 
-                  ///REMEMBER CHECKBOX AND FORGET BUTTON SECTION
-                  buildForgetRememberSection(context),
+                    ///REMEMBER CHECKBOX AND FORGET BUTTON SECTION
+                    buildForgetRememberSection(context),
 
-                  SizedBox(
-                    height: 3.5.h,
-                  ),
+                    SizedBox(
+                      height: 3.5.h,
+                    ),
 
-                  ///SIGN IN AND CREATE ACCOUNT BUTTONS
-                  buildAccountButtons(),
+                    ///SIGN IN AND CREATE ACCOUNT BUTTONS
+                    buildAccountButtons(),
 
-                  const Expanded(
-                    child: SizedBox(),
-                  ),
+                    SizedBox(
+                      height: 2.h,
+                    ),
 
-                  ///GUEST BUTTON
-                  buildGuestButton(),
+                    ///GUEST BUTTON
+                    buildGuestButton(),
 
-                  SizedBox(
-                    height: 1.h,
-                  ),
-                ],
+                    SizedBox(
+                      height: 1.h,
+                    ),
+                  ],
+                ),
               ),
             ),
           ],

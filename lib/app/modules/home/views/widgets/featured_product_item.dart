@@ -10,13 +10,15 @@ class FeaturedProductItem extends StatelessWidget {
       required this.featuredProduct,
       required this.onTap,
       required this.onAddTap,
-      required this.useDarkBackground})
+      required this.useDarkBackground,
+      required this.isForGridView})
       : super(key: key);
 
   final FeaturedProduct featuredProduct;
   final VoidCallback onTap;
   final VoidCallback onAddTap;
   final bool useDarkBackground;
+  final bool isForGridView;
 
   @override
   Widget build(BuildContext context) {
@@ -158,9 +160,13 @@ class FeaturedProductItem extends StatelessWidget {
                       ],
                     ),
                   ),
-                  const Expanded(
-                    child: SizedBox(),
-                  ),
+                  isForGridView
+                      ? const Expanded(
+                          child: SizedBox(),
+                        )
+                      : SizedBox(
+                          height: 2.h,
+                        ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

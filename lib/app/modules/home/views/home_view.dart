@@ -151,7 +151,7 @@ class HomeView extends GetView<HomeController> {
             padding: EdgeInsets.symmetric(
               horizontal: 2.w,
             ),
-            childAspectRatio: 0.65,
+            childAspectRatio: 0.63,
             scrollDirection: Axis.vertical,
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
@@ -163,6 +163,7 @@ class HomeView extends GetView<HomeController> {
                     index,
                   ),
                   useDarkBackground: false,
+                  isForGridView: true,
                   onTap: () {},
                   onAddTap: () {},
                 );
@@ -177,7 +178,7 @@ class HomeView extends GetView<HomeController> {
   Container buildTrendingNearYouProducts() {
     return Container(
       color: Colors.white,
-      height: 47.h,
+      width: double.infinity,
       padding: EdgeInsets.only(
         top: 3.w,
         bottom: 4.w,
@@ -218,13 +219,12 @@ class HomeView extends GetView<HomeController> {
               ),
             ],
           ),
-          Expanded(
-            child: ListView.builder(
-              itemCount: controller.featuredProductsList.length,
-              scrollDirection: Axis.horizontal,
-              shrinkWrap: true,
-              itemBuilder: (context, index) {
-                return Container(
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: List.generate(
+                controller.featuredProductsList.length,
+                (index) => Container(
                   width: 42.w,
                   margin: EdgeInsets.only(
                     left: index == 0 ? 3.w : 0,
@@ -234,11 +234,12 @@ class HomeView extends GetView<HomeController> {
                       index,
                     ),
                     useDarkBackground: false,
+                    isForGridView: false,
                     onTap: () {},
                     onAddTap: () {},
                   ),
-                );
-              },
+                ),
+              ),
             ),
           ),
         ],
@@ -306,6 +307,7 @@ class HomeView extends GetView<HomeController> {
                       index,
                     ),
                     useDarkBackground: true,
+                    isForGridView: false,
                     onTap: () {},
                     onAddTap: () {},
                   ),
