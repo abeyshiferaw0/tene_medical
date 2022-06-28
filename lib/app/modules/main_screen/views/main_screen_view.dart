@@ -13,14 +13,12 @@ import '../controllers/main_screen_controller.dart';
 class MainScreenView extends GetView<MainScreenController> {
   const MainScreenView({Key? key}) : super(key: key);
 
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(),
       bottomNavigationBar: const BottomBarWidget(),
-      backgroundColor: const Color(0xffEBF5F4),
+      backgroundColor: Colors.white,
       body: Obx(() {
         return IndexedStack(
           index: controller.selectedTabIndex.value,
@@ -78,7 +76,7 @@ class MainScreenView extends GetView<MainScreenController> {
         ),
       ],
       centerTitle: false,
-      backgroundColor: const Color(0xffF6FBFB),
+      backgroundColor: Colors.white,
       shadowColor: Colors.transparent,
     );
   }
