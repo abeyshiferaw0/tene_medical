@@ -1,20 +1,12 @@
 import 'package:get/get.dart';
 
 class OrderController extends GetxController {
-  //TODO: Implement OrderController
+  final Rx<CurrentOrderPage> currentOrderPage =
+      Rx<CurrentOrderPage>(CurrentOrderPage.ON_GOING);
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  void changePage(CurrentOrderPage page) {
+    currentOrderPage(page);
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {}
-  void increment() => count.value++;
 }
+
+enum CurrentOrderPage { ON_GOING, HISTORY }

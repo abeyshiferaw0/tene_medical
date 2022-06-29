@@ -77,6 +77,7 @@ class NearByView extends GetView<NearByController> {
                 ListView.builder(
                   itemCount: 20,
                   scrollDirection: Axis.horizontal,
+                  physics: const PageScrollPhysics(),
                   itemBuilder: (context, index) {
                     return const MapProductItem();
                   },

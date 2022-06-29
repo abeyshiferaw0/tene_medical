@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
-import 'package:tene_medical/app/config/theme.dart';
+
+import '../config/theme.dart';
 import '../modules/forget_password/bindings/forget_password_binding.dart';
 import '../modules/forget_password/views/forget_password_view.dart';
 import '../modules/forget_password_two/bindings/forget_password_two_binding.dart';
@@ -14,6 +15,8 @@ import '../modules/near_by/bindings/near_by_binding.dart';
 import '../modules/near_by/views/near_by_view.dart';
 import '../modules/order/bindings/order_binding.dart';
 import '../modules/order/views/order_view.dart';
+import '../modules/order_tracking/bindings/order_tracking_binding.dart';
+import '../modules/order_tracking/views/order_tracking_view.dart';
 import '../modules/otppage/bindings/otppage_binding.dart';
 import '../modules/otppage/views/otppage_view.dart';
 import '../modules/profile/bindings/profile_binding.dart';
@@ -78,6 +81,11 @@ class AppPages {
       name: _Paths.PROFILE,
       page: () => ProfileView(),
       binding: ProfileBinding(),
+    ),
+    GetPage(
+      name: _Paths.ORDER_TRACKING,
+      page: () => OrderTrackingView(),
+      binding: OrderTrackingBinding(),
     ),
   ];
 }

@@ -13,6 +13,7 @@ abstract class Routes {
   static const NEAR_BY = _Paths.NEAR_BY;
   static const ORDER = _Paths.ORDER;
   static const PROFILE = _Paths.PROFILE;
+  static const ORDER_TRACKING = _Paths.ORDER_TRACKING;
 }
 
 abstract class _Paths {
@@ -27,4 +28,5 @@ abstract class _Paths {
   static const NEAR_BY = '/near-by';
   static const ORDER = '/order';
   static const PROFILE = '/profile';
+  static const ORDER_TRACKING = '/order-tracking';
 }
