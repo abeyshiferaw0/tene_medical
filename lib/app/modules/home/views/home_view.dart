@@ -290,30 +290,6 @@ class HomeView extends GetView<HomeController> {
               ),
             ],
           ),
-          // Expanded(
-          //   child: ListView.builder(
-          //     itemCount: controller.featuredProductsList.length,
-          //     scrollDirection: Axis.horizontal,
-          //     shrinkWrap: true,
-          //     itemBuilder: (context, index) {
-          //       return Container(
-          //         width: 42.w,
-          //         margin: EdgeInsets.only(
-          //           left: index == 0 ? 3.w : 0,
-          //         ),
-          //         child: FeaturedProductItem(
-          //           featuredProduct: controller.featuredProductsList.elementAt(
-          //             index,
-          //           ),
-          //           useDarkBackground: true,
-          //           isForGridView: false,
-          //           onTap: () {},
-          //           onAddTap: () {},
-          //         ),
-          //       );
-          //     },
-          //   ),
-          // ),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
@@ -328,7 +304,7 @@ class HomeView extends GetView<HomeController> {
                     featuredProduct: controller.featuredProductsList.elementAt(
                       index,
                     ),
-                    useDarkBackground: false,
+                    useDarkBackground: true,
                     isForGridView: false,
                     onTap: () {},
                     onAddTap: () {},
@@ -424,52 +400,57 @@ class HomeView extends GetView<HomeController> {
     );
   }
 
-  Container buildHeaderSearchBar() {
-    return Container(
-      color: Colors.white,
-      padding: EdgeInsets.only(left: 4.w, right: 4.w, bottom: 3.h, top: 1.h),
-      child: TextField(
-        style: TextStyle(
-          color: Colors.black87,
-          fontSize: 14.sp,
-          fontWeight: FontWeight.w600,
-          decoration: TextDecoration.none,
-        ),
-        decoration: InputDecoration(
-          hintText: "Search for medicines/healthcare products",
-          hintStyle: TextStyle(
-            color: const Color(0xff757A80),
-            fontSize: 12.sp,
-            fontWeight: FontWeight.w400,
-          ),
-          alignLabelWithHint: true,
-          prefixIcon: Icon(
-            Icons.search,
-            size: 5.w,
-            color: Colors.black45,
-          ),
-          fillColor: Colors.white,
-          border: InputBorder.none,
-          enabledBorder: OutlineInputBorder(
-            borderRadius: const BorderRadius.all(
-              Radius.circular(8.0),
+  Material buildHeaderSearchBar() {
+    return Material(
+      child: InkWell(
+        onTap: (){},
+        child: Container(
+          color: Colors.white,
+          padding: EdgeInsets.only(left: 4.w, right: 4.w, bottom: 3.h, top: 1.h),
+          child: TextField(
+            style: TextStyle(
+              color: Colors.black87,
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w600,
+              decoration: TextDecoration.none,
             ),
-            borderSide: BorderSide(
-              color: AppTheme.themeColor.withOpacity(0.4),
+            decoration: InputDecoration(
+              hintText: "Search for medicines/healthcare products",
+              hintStyle: TextStyle(
+                color: const Color(0xff757A80),
+                fontSize: 12.sp,
+                fontWeight: FontWeight.w400,
+              ),
+              alignLabelWithHint: true,
+              prefixIcon: Icon(
+                Icons.search,
+                size: 6.w,
+                color: Colors.black45,
+              ),
+              fillColor: Colors.white,
+              border: InputBorder.none,
+              enabledBorder: OutlineInputBorder(
+                borderRadius: const BorderRadius.all(
+                  Radius.circular(8.0),
+                ),
+                borderSide: BorderSide(
+                  color: AppTheme.themeColor.withOpacity(0.4),
+                ),
+              ),
+              focusedBorder: const OutlineInputBorder(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(6.0),
+                ),
+                borderSide: BorderSide(
+                  color: AppTheme.themeColor,
+                ),
+              ),
+              filled: true,
+              contentPadding: EdgeInsets.symmetric(
+                vertical: 5.w,
+                horizontal: 2.w,
+              ),
             ),
-          ),
-          focusedBorder: const OutlineInputBorder(
-            borderRadius: BorderRadius.all(
-              Radius.circular(6.0),
-            ),
-            borderSide: BorderSide(
-              color: AppTheme.themeColor,
-            ),
-          ),
-          filled: true,
-          contentPadding: EdgeInsets.symmetric(
-            vertical: 4.w,
-            horizontal: 2.w,
           ),
         ),
       ),
