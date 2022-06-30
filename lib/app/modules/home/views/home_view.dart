@@ -7,6 +7,7 @@ import 'package:tene_medical/app/modules/home/views/widgets/carousel_slider.dart
 import 'package:tene_medical/app/modules/home/views/widgets/category_item.dart';
 import 'package:tene_medical/app/modules/home/views/widgets/featured_product_item.dart';
 import 'package:tene_medical/app/modules/home/views/widgets/main_category_item.dart';
+import 'package:tene_medical/app/routes/app_pages.dart';
 
 import '../controllers/home_controller.dart';
 import 'widgets/health_blog_item.dart';
@@ -164,7 +165,9 @@ class HomeView extends GetView<HomeController> {
                   ),
                   useDarkBackground: false,
                   isForGridView: true,
-                  onTap: () {},
+                  onTap: () {
+                    Get.toNamed(Routes.PRODUCT);
+                  },
                   onAddTap: () {},
                 );
               },
@@ -403,10 +406,11 @@ class HomeView extends GetView<HomeController> {
   Material buildHeaderSearchBar() {
     return Material(
       child: InkWell(
-        onTap: (){},
+        onTap: () {},
         child: Container(
           color: Colors.white,
-          padding: EdgeInsets.only(left: 4.w, right: 4.w, bottom: 3.h, top: 1.h),
+          padding:
+              EdgeInsets.only(left: 4.w, right: 4.w, bottom: 3.h, top: 1.h),
           child: TextField(
             style: TextStyle(
               color: Colors.black87,

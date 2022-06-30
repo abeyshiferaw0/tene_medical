@@ -1,5 +1,10 @@
 import 'package:get/get.dart';
-import 'package:tene_medical/app/config/theme.dart';
+
+import '../config/theme.dart';
+import '../modules/add_card/bindings/add_card_binding.dart';
+import '../modules/add_card/views/add_card_view.dart';
+import '../modules/catagory/bindings/catagory_binding.dart';
+import '../modules/catagory/views/catagory_view.dart';
 import '../modules/forget_password/bindings/forget_password_binding.dart';
 import '../modules/forget_password/views/forget_password_view.dart';
 import '../modules/forget_password_two/bindings/forget_password_two_binding.dart';
@@ -14,8 +19,14 @@ import '../modules/near_by/bindings/near_by_binding.dart';
 import '../modules/near_by/views/near_by_view.dart';
 import '../modules/order/bindings/order_binding.dart';
 import '../modules/order/views/order_view.dart';
+import '../modules/order_tracker/bindings/order_tracker_binding.dart';
+import '../modules/order_tracker/views/order_tracker_view.dart';
 import '../modules/otppage/bindings/otppage_binding.dart';
 import '../modules/otppage/views/otppage_view.dart';
+import '../modules/payment/bindings/payment_binding.dart';
+import '../modules/payment/views/payment_view.dart';
+import '../modules/product/bindings/product_binding.dart';
+import '../modules/product/views/product_view.dart';
 import '../modules/profile/bindings/profile_binding.dart';
 import '../modules/profile/views/profile_view.dart';
 import '../modules/signup/bindings/signup_binding.dart';
@@ -26,7 +37,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.LOGIN;
+  static const INITIAL = Routes.PRODUCT;
 
   static final routes = [
     GetPage(
@@ -78,6 +89,31 @@ class AppPages {
       name: _Paths.PROFILE,
       page: () => ProfileView(),
       binding: ProfileBinding(),
+    ),
+    GetPage(
+      name: _Paths.CATAGORY,
+      page: () => const CatagoryView(),
+      binding: CatagoryBinding(),
+    ),
+    GetPage(
+      name: _Paths.ORDER_TRACKER,
+      page: () => const OrderTrackerView(),
+      binding: OrderTrackerBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADD_CARD,
+      page: () => const AddCardView(),
+      binding: AddCardBinding(),
+    ),
+    GetPage(
+      name: _Paths.PAYMENT,
+      page: () => const PaymentView(),
+      binding: PaymentBinding(),
+    ),
+    GetPage(
+      name: _Paths.PRODUCT,
+      page: () => const ProductView(),
+      binding: ProductBinding(),
     ),
   ];
 }

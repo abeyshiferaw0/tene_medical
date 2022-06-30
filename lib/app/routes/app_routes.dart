@@ -13,6 +13,11 @@ abstract class Routes {
   static const NEAR_BY = _Paths.NEAR_BY;
   static const ORDER = _Paths.ORDER;
   static const PROFILE = _Paths.PROFILE;
+  static const CATAGORY = _Paths.CATAGORY;
+  static const ORDER_TRACKER = _Paths.ORDER_TRACKER;
+  static const ADD_CARD = _Paths.ADD_CARD;
+  static const PAYMENT = _Paths.PAYMENT;
+  static const PRODUCT = _Paths.PRODUCT;
 }
 
 abstract class _Paths {
@@ -27,4 +32,9 @@ abstract class _Paths {
   static const NEAR_BY = '/near-by';
   static const ORDER = '/order';
   static const PROFILE = '/profile';
+  static const CATAGORY = '/catagory';
+  static const ORDER_TRACKER = '/order-tracker';
+  static const ADD_CARD = '/add-card';
+  static const PAYMENT = '/payment';
+  static const PRODUCT = '/product';
 }
