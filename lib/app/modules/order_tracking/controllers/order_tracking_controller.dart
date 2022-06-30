@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
-class OrderTrackerController extends GetxController {
-  //TODO: Implement OrderTrackerController
+class OrderTrackingController extends GetxController {
+  //TODO: Implement OrderTrackingController
 
   final count = 0.obs;
   @override
@@ -15,9 +15,6 @@ class OrderTrackerController extends GetxController {
   }
 
   @override
-  void onClose() {
-    super.onClose();
-  }
-
+  void onClose() {}
   void increment() => count.value++;
 }
