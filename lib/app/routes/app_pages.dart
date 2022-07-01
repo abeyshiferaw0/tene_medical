@@ -19,8 +19,7 @@ import '../modules/near_by/bindings/near_by_binding.dart';
 import '../modules/near_by/views/near_by_view.dart';
 import '../modules/order/bindings/order_binding.dart';
 import '../modules/order/views/order_view.dart';
-import '../modules/order_tracker/bindings/order_tracker_binding.dart';
-import '../modules/order_tracker/views/order_tracker_view.dart';
+
 import '../modules/otppage/bindings/otppage_binding.dart';
 import '../modules/otppage/views/otppage_view.dart';
 import '../modules/payment/bindings/payment_binding.dart';
@@ -96,11 +95,6 @@ class AppPages {
       binding: CatagoryBinding(),
     ),
     GetPage(
-      name: _Paths.ORDER_TRACKER,
-      page: () => const OrderTrackerView(),
-      binding: OrderTrackerBinding(),
-    ),
-    GetPage(
       name: _Paths.ADD_CARD,
       page: () => const AddCardView(),
       binding: AddCardBinding(),
@@ -112,7 +106,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.PRODUCT,
-      page: () => const ProductView(),
+      page: () => ProductView(),
       binding: ProductBinding(),
     ),
   ];

@@ -4,8 +4,8 @@ import 'package:sizer/sizer.dart';
 import 'package:tene_medical/app/config/theme.dart';
 import 'package:tene_medical/app/modules/home/models/featured_product.dart';
 
-class FeaturedProductItem extends StatelessWidget {
-  const FeaturedProductItem(
+class SimilarProductcard extends StatelessWidget {
+  const SimilarProductcard(
       {Key? key,
       required this.featuredProduct,
       required this.onTap,
@@ -23,7 +23,7 @@ class FeaturedProductItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 50.w,
+      width: 60.w,
       child: Material(
         color: useDarkBackground ? const Color(0xff04312B) : null,
         child: InkWell(
@@ -54,7 +54,7 @@ class FeaturedProductItem extends StatelessWidget {
                   children: [
                     Image.network(
                       featuredProduct.imgUrl,
-                      height: 15.h,
+                      height: 18.8.h,
                       width: double.infinity,
                       fit: BoxFit.cover,
                     ),
@@ -64,72 +64,30 @@ class FeaturedProductItem extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            featuredProduct.title,
+                            "Duphalac Oral Solution Lemon",
                             maxLines: 3,
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
-                              fontSize: 10.sp,
+                              fontSize: 13.sp,
                               fontWeight: FontWeight.w400,
                               color: Colors.black87,
                             ),
                           ),
                           SizedBox(
-                            height: 0.6.h,
+                            height: 1.0.h,
                           ),
                           Text(
-                            featuredProduct.type,
+                            "450 ml in 1 bottle",
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
-                              fontSize: 9.sp,
+                              fontSize: 12.sp,
                               fontWeight: FontWeight.w400,
                               color: Colors.black45,
                             ),
                           ),
                           SizedBox(
-                            height: 1.2.h,
-                          ),
-                          Row(
-                            children: [
-                              RatingBar(
-                                initialRating: featuredProduct.rating,
-                                direction: Axis.horizontal,
-                                allowHalfRating: true,
-                                itemCount: 5,
-                                itemSize: 4.w,
-                                ratingWidget: RatingWidget(
-                                    full: Icon(
-                                      Icons.star_rounded,
-                                      color: Colors.orange.shade800,
-                                    ),
-                                    half: Icon(
-                                      Icons.star_half_rounded,
-                                      color: Colors.orange.shade800,
-                                    ),
-                                    empty: Icon(
-                                      Icons.star_outline_rounded,
-                                      color: Colors.orange.shade800,
-                                    )),
-                                onRatingUpdate: (value) {},
-                              ),
-                              SizedBox(
-                                width: 0.5.w,
-                              ),
-                              Expanded(
-                                child: Text(
-                                  '(${featuredProduct.rattingQuantity}) Rating',
-                                  overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(
-                                    fontSize: 10.sp,
-                                    fontWeight: FontWeight.w400,
-                                    color: Colors.black38,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: 2.w,
+                            height: 1.h,
                           ),
                           Row(
                             children: [
@@ -138,21 +96,21 @@ class FeaturedProductItem extends StatelessWidget {
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
-                                  fontSize: 9.sp,
+                                  fontSize: 11.sp,
                                   fontWeight: FontWeight.w400,
                                   color: Colors.black45,
                                   decoration: TextDecoration.lineThrough,
                                 ),
                               ),
                               SizedBox(
-                                width: 1.w,
+                                width: 2.w,
                               ),
                               Text(
                                 featuredProduct.pricePercentOff,
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(
-                                  fontSize: 9.sp,
+                                  fontSize: 11.sp,
                                   fontWeight: FontWeight.w400,
                                   color: AppTheme.themeColor,
                                 ),
@@ -167,7 +125,7 @@ class FeaturedProductItem extends StatelessWidget {
                             child: SizedBox(),
                           )
                         : SizedBox(
-                            height: 2.h,
+                            height: 1.h,
                           ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -179,42 +137,27 @@ class FeaturedProductItem extends StatelessWidget {
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
-                                fontSize: 12.sp,
+                                fontSize: 14.sp,
                                 fontWeight: FontWeight.w600,
-                                color: Colors.black87,
+                                color: AppTheme.themeColor,
                               ),
                             ),
                           ),
                         ),
                         Expanded(
-                          child: InkWell(
-                            onTap: onAddTap,
-                            child: Container(
-                              padding: EdgeInsets.all(1.5.w),
-                              decoration: const BoxDecoration(
-                                borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(20),
-                                ),
-                                gradient: LinearGradient(
-                                  colors: [
-                                    AppTheme.themeColor,
-                                    AppTheme.themeColorFaded
-                                  ],
-                                ),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  "Add".toUpperCase(),
-                                  style: TextStyle(
-                                    fontSize: 11.sp,
-                                    fontWeight: FontWeight.w600,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ),
+                            child: CircleAvatar(
+                          radius: 23,
+                          backgroundColor: AppTheme.themeColor,
+                          child: Center(
+                            child: IconButton(
+                                onPressed: () {},
+                                icon: const Icon(
+                                  Icons.add,
+                                  size: 28,
+                                  color: Colors.white,
+                                )),
                           ),
-                        ),
+                        ))
                       ],
                     ),
                   ],
