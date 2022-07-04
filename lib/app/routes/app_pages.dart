@@ -3,8 +3,12 @@ import 'package:get/get.dart';
 import '../config/theme.dart';
 import '../modules/add_card/bindings/add_card_binding.dart';
 import '../modules/add_card/views/add_card_view.dart';
+import '../modules/cart/bindings/cart_binding.dart';
+import '../modules/cart/views/cart_view.dart';
 import '../modules/catagory/bindings/catagory_binding.dart';
 import '../modules/catagory/views/catagory_view.dart';
+import '../modules/delivery_detail/bindings/delivery_detail_binding.dart';
+import '../modules/delivery_detail/views/delivery_detail_view.dart';
 import '../modules/forget_password/bindings/forget_password_binding.dart';
 import '../modules/forget_password/views/forget_password_view.dart';
 import '../modules/forget_password_two/bindings/forget_password_two_binding.dart';
@@ -19,7 +23,8 @@ import '../modules/near_by/bindings/near_by_binding.dart';
 import '../modules/near_by/views/near_by_view.dart';
 import '../modules/order/bindings/order_binding.dart';
 import '../modules/order/views/order_view.dart';
-
+import '../modules/order_detail/bindings/order_detail_binding.dart';
+import '../modules/order_detail/views/order_detail_view.dart';
 import '../modules/otppage/bindings/otppage_binding.dart';
 import '../modules/otppage/views/otppage_view.dart';
 import '../modules/payment/bindings/payment_binding.dart';
@@ -36,7 +41,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.PRODUCT;
+  static const INITIAL = Routes.ORDER_DETAIL;
 
   static final routes = [
     GetPage(
@@ -108,6 +113,21 @@ class AppPages {
       name: _Paths.PRODUCT,
       page: () => ProductView(),
       binding: ProductBinding(),
+    ),
+    GetPage(
+      name: _Paths.CART,
+      page: () => const CartView(),
+      binding: CartBinding(),
+    ),
+    GetPage(
+      name: _Paths.DELIVERY_DETAIL,
+      page: () => const DeliveryDetailView(),
+      binding: DeliveryDetailBinding(),
+    ),
+    GetPage(
+      name: _Paths.ORDER_DETAIL,
+      page: () => const OrderDetailView(),
+      binding: OrderDetailBinding(),
     ),
   ];
 }

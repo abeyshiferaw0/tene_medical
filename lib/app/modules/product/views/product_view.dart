@@ -4,6 +4,9 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import 'package:get/get.dart';
 import 'package:tene_medical/app/config/theme.dart';
+import 'package:tene_medical/app/modules/product/views/widgets/add_to_cart_button.dart';
+import 'package:tene_medical/app/modules/product/views/widgets/rating_bar.dart';
+import 'package:tene_medical/app/modules/product/views/widgets/recent_review.dart';
 import 'package:tene_medical/app/modules/product/views/widgets/similar_product_card.dart';
 
 import '../../../routes/app_pages.dart';
@@ -17,6 +20,7 @@ import 'package:sizer/sizer.dart';
 class ProductView extends GetView<ProductController> {
   ProductView({Key? key}) : super(key: key);
   String selectedpackedsize = "";
+
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -40,7 +44,15 @@ class ProductView extends GetView<ProductController> {
                   SizedBox(
                     height: 2.h,
                   ),
-                  frequentlybought()
+                  frequentlybought(),
+                  SizedBox(
+                    height: 2.h,
+                  ),
+                  review(),
+                  SizedBox(
+                    height: 2.h,
+                  ),
+                  const CartButton()
                 ]),
                 buildAppBar(),
               ],
@@ -594,6 +606,132 @@ class ProductView extends GetView<ProductController> {
                   );
                 })),
           ),
+        ],
+      ),
+    );
+  }
+
+  Widget review() {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 15),
+      width: double.infinity,
+      color: Colors.white,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Text(
+                "Rating and Reviews",
+                style: TextStyle(
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.black87,
+                ),
+              ),
+            ],
+          ),
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 0, vertical: 10),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 15,
+            ),
+            width: 95.w,
+            height: 6.5.h,
+            decoration: BoxDecoration(
+                color: Colors.grey[300],
+                borderRadius: const BorderRadius.all(Radius.circular(10))),
+            child: Row(
+              children: [
+                Text(
+                  "4.1",
+                  style: TextStyle(fontSize: 14.sp, color: Colors.grey[500]),
+                ),
+                Text(
+                  "/",
+                  style: TextStyle(fontSize: 13.sp, color: Colors.grey[500]),
+                ),
+                Text(
+                  "5",
+                  style: TextStyle(fontSize: 11.sp, color: Colors.grey[500]),
+                ),
+                SizedBox(
+                  width: 4.w,
+                ),
+                RatingBar(
+                  initialRating: 4.1,
+                  direction: Axis.horizontal,
+                  allowHalfRating: true,
+                  itemCount: 5,
+                  itemSize: 7.w,
+                  ratingWidget: RatingWidget(
+                      full: Icon(
+                        Icons.star_rounded,
+                        color: Colors.orange.shade800,
+                      ),
+                      half: Icon(
+                        Icons.star_half_rounded,
+                        color: Colors.orange.shade800,
+                      ),
+                      empty: Icon(
+                        Icons.star_outline_rounded,
+                        color: Colors.orange.shade800,
+                      )),
+                  onRatingUpdate: (value) {},
+                ),
+                const Expanded(child: SizedBox()),
+                Text(
+                  "156 Rating",
+                  style: TextStyle(fontSize: 13.sp, color: Colors.grey[500]),
+                ),
+              ],
+            ),
+          ),
+          const Ratingprogress(
+            nostarts: "5 stars",
+            percentage: "48%",
+            percent: 0.48,
+            percentcolor: AppTheme.themeColor,
+          ),
+          const Ratingprogress(
+              nostarts: "4 stars",
+              percentage: "34%",
+              percent: 0.30,
+              percentcolor: AppTheme.themeColor),
+          const Ratingprogress(
+              nostarts: "3 stars",
+              percentage: "8%",
+              percent: 0.20,
+              percentcolor: AppTheme.themeColor),
+          const Ratingprogress(
+              nostarts: "2 stars",
+              percentage: "3%",
+              percent: 0.10,
+              percentcolor: Color.fromARGB(255, 216, 138, 35)),
+          const Ratingprogress(
+              nostarts: "1 stars",
+              percentage: "7%",
+              percent: 0.15,
+              percentcolor: Color.fromARGB(255, 255, 150, 12)),
+          Divider(
+            color: Colors.grey[500],
+            height: 4.h,
+            thickness: 2,
+          ),
+          Text(
+            "Recent Reviews",
+            style: TextStyle(
+              fontSize: 14.sp,
+              fontWeight: FontWeight.w600,
+              color: Colors.black87,
+            ),
+          ),
+          SizedBox(
+            height: 2.w,
+          ),
+          const Recentreview(),
+          const Recentreview(),
+          const Recentreview()
         ],
       ),
     );
