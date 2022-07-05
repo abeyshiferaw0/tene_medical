@@ -22,6 +22,7 @@ abstract class Routes {
   static const DELIVERY_DETAIL = _Paths.DELIVERY_DETAIL;
   static const ORDER_DETAIL = _Paths.ORDER_DETAIL;
   static const SEARCH_NEARBY = _Paths.SEARCH_NEARBY;
+  static const ORDER_SUCCESS = _Paths.ORDER_SUCCESS;
 }
 
 abstract class _Paths {
@@ -45,4 +46,5 @@ abstract class _Paths {
   static const DELIVERY_DETAIL = '/delivery-detail';
   static const ORDER_DETAIL = '/order-detail';
   static const SEARCH_NEARBY = '/search-nearby';
+  static const ORDER_SUCCESS = '/order-success';
 }

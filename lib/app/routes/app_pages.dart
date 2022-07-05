@@ -25,6 +25,8 @@ import '../modules/order/bindings/order_binding.dart';
 import '../modules/order/views/order_view.dart';
 import '../modules/order_detail/bindings/order_detail_binding.dart';
 import '../modules/order_detail/views/order_detail_view.dart';
+import '../modules/order_success/bindings/order_success_binding.dart';
+import '../modules/order_success/views/order_success_view.dart';
 import '../modules/otppage/bindings/otppage_binding.dart';
 import '../modules/otppage/views/otppage_view.dart';
 import '../modules/payment/bindings/payment_binding.dart';
@@ -43,7 +45,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.SEARCH_NEARBY;
+  static const INITIAL = Routes.ORDER_SUCCESS;
 
   static final routes = [
     GetPage(
@@ -135,6 +137,11 @@ class AppPages {
       name: _Paths.SEARCH_NEARBY,
       page: () => const SearchNearbyView(),
       binding: SearchNearbyBinding(),
+    ),
+    GetPage(
+      name: _Paths.ORDER_SUCCESS,
+      page: () => const OrderSuccessView(),
+      binding: OrderSuccessBinding(),
     ),
   ];
 }
