@@ -33,6 +33,8 @@ import '../modules/product/bindings/product_binding.dart';
 import '../modules/product/views/product_view.dart';
 import '../modules/profile/bindings/profile_binding.dart';
 import '../modules/profile/views/profile_view.dart';
+import '../modules/search_nearby/bindings/search_nearby_binding.dart';
+import '../modules/search_nearby/views/search_nearby_view.dart';
 import '../modules/signup/bindings/signup_binding.dart';
 import '../modules/signup/views/signup_view.dart';
 
@@ -41,12 +43,12 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.ORDER_DETAIL;
+  static const INITIAL = Routes.SEARCH_NEARBY;
 
   static final routes = [
     GetPage(
       name: _Paths.HOME,
-      page: () => HomeView(),
+      page: () => const HomeView(),
       binding: HomeBinding(),
     ),
     GetPage(
@@ -56,7 +58,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.SIGNUP,
-      page: () => SignupView(),
+      page: () => const SignupView(),
       binding: SignupBinding(),
     ),
     GetPage(
@@ -76,7 +78,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.MAIN_SCREEN,
-      page: () => MainScreenView(),
+      page: () => const MainScreenView(),
       binding: MainScreenBinding(),
     ),
     GetPage(
@@ -128,6 +130,11 @@ class AppPages {
       name: _Paths.ORDER_DETAIL,
       page: () => const OrderDetailView(),
       binding: OrderDetailBinding(),
+    ),
+    GetPage(
+      name: _Paths.SEARCH_NEARBY,
+      page: () => const SearchNearbyView(),
+      binding: SearchNearbyBinding(),
     ),
   ];
 }
